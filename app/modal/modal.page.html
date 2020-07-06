@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome to Paradise {{firstName}} {{lastName}}</ion-title>
+    <ion-card>
+      first name: <input [(ngModel)]="firstName">
+    </ion-card>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  Click Image to Perform Action
+    <ion-card>
+        <img src="./assets/img/mal10.jpg" (click)="presentActionSheet()">
+    </ion-card>
+  <ion-button (click)="dismiss()" >Return</ion-button>
+</ion-card>
+</ion-content>

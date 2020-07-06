@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="slide-in">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <ion-card>
+      <ion-item>
+      <ion-input  type="text" placeholder="Enter your first name" [(ngModel)]="firstName"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-input type="text" placeHolder="Enter your last name" [(ngModel)]="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="openModal()">Submit (Open Modal Dialog Box)</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-slides [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+    <ion-slide *ngFor="let m of myPictures">
+      <ion-card>
+        <img src="{{m.image}}">
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>
+            <ion-icon name="pin"></ion-icon><b>Ideal Location</b>
+          </h3>
+          <h4>Located ten minutes away from the international airport, we provide the best without the hassle of going
+            any further.</h4>
+        </ion-col>
+        <ion-col>
+          <h3>
+            <ion-icon name="star-outline"></ion-icon><b>Gorgeous House Reefs</b>
+          </h3>
+          <h4>We are thankful and proud to have one of the most beautiful house reefs in the Maldives. Perfect to try
+            your first snorkeling or scuba dive lesson.</h4>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h3>
+            <ion-icon name="happy"></ion-icon><b>Amazing Activities</b>
+          </h3>
+          <h4>In a country that is more water than land, the possibilities for fun-filled aquatic activities are almost inexhaustible. 
+            Have fun with water sports on-site at our hotel in the Maldives, including snorkeling and diving</h4>
+        </ion-col>
+        <ion-col>
+          <h3>
+            <ion-icon name="heart"></ion-icon><b>Our Guests Loves Us</b>
+          </h3>
+          <h4>We have many loyal, repeat guests and some guests have been with us for over 20 years. We are also proud
+            to be one of the top rated hotels in all of Maldives on every booking and review site.</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+      <ion-item>
+        <h3><b>RATE US</b></h3>
+      </ion-item>
+      <ion-item>
+         <ion-range color="danger" pin="true" min="20" max="90" step="2">
+          <ion-icon size="small" slot="start" name="heart"></ion-icon>
+          <ion-icon slot="end" size="large" name="heart"></ion-icon>
+        </ion-range> 
+        </ion-item>      
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+            <h3><b>REVIEWS</b></h3>
+    </ion-item>
+ 
+  <ion-item>
+      <ion-avatar slot="start">
+        <img src="./assets/img/avatar1.jpg">
+      </ion-avatar>
+      <ion-label>
+        Samiksha
+        <p>Awesome experience. Amazing hospitality</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+        <ion-avatar slot="start">
+          <img src="./assets/img/avatar2.jpg">
+        </ion-avatar>
+        <ion-label>
+          Niraj
+          <p>It was a dream vacation with impossibly perfect views, activities and food </p>
+        </ion-label>
+      </ion-item>
+</ion-card>
+</ion-content>
